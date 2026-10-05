@@ -38,3 +38,9 @@ FetchContent_MakeAvailable(glad)
 # Specify glad settings
 glad_add_library(glad_gl_core_46 REPRODUCIBLE API gl:core=4.6)
 #--------------------------------------------------------------------
+
+set(base "src/base/application.cpp")
+
+add_executable(3D-Tetris "src/main.cpp" ${base})
+target_link_libraries(3D-Tetris PRIVATE glfw glad_gl_core_46)
+target_include_directories(3D-Tetris PRIVATE "src")
